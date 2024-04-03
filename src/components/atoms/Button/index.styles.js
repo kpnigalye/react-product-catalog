@@ -6,7 +6,7 @@ const primaryVariant = css`
 `;
 
 const secondaryVariant = css`
-  background-color: #6c757d;
+  background-color: #e3165b;
   color: white;
 `;
 

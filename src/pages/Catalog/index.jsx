@@ -1,16 +1,12 @@
-// import PropTypes from "prop-types";
-import axios from "axios";
-import { useEffect, useState } from "react";
 import ProductList from "../../components/organisms/ProductList";
+import useFetch from "../../hooks/useFetch";
+import { PRODUCTS_ENDPOINT } from "../../constants";
 
 export const Catalog = () => {
-  const [products, setProducts] = useState([]);
+  const { data: products, loading, error } = useFetch(PRODUCTS_ENDPOINT.LIST);
 
-  useEffect(() => {
-    axios.get("https://fakestoreapi.com/products").then((response) => {
-      setProducts(response?.data);
-    });
-  }, []);
+  if (loading) return <div>Loading Product Catalog...</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <>

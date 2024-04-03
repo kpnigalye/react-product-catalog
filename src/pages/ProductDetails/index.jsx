@@ -1,26 +1,24 @@
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
 import ProductInfo from "../../components/organisms/ProductInfo";
+import useFetch from "../../hooks/useFetch";
+import { PRODUCTS_ENDPOINT } from "../../constants";
+import Button from "../../components/atoms/Button";
 
 function ProductDetails() {
   const { id } = useParams();
-  const [product, setProduct] = useState({});
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    axios.get(`https://fakestoreapi.com/products/${id}`).then((response) => {
-      setProduct(response?.data);
-    });
-  }, [id]);
+  const { data: product, loading, error } = useFetch(PRODUCTS_ENDPOINT.GET(id));
+
+  if (loading) return <div>Loading Product details...</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <>
-      <h2>Product Details of Product {id}</h2>
-      {Object.keys(product).length > 0 ? (
-        <ProductInfo product={product} />
-      ) : (
-        "loading product details.."
-      )}
+      <ProductInfo product={product} />
+      <Button variant="secondary" onClick={() => navigate(-1)}>
+        Back
+      </Button>
     </>
   );
 }

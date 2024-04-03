@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 import { StyledButton } from "./index.styles";
 
@@ -11,7 +10,7 @@ function Button({ children, onClick, type = "button", ...props }) {
 }
 
 Button.propTypes = {
-  children: PropTypes.arrayOf(React.Node),
+  children: PropTypes.string,
   onClick: PropTypes.func,
   type: PropTypes.string,
 };
