@@ -8,6 +8,9 @@ import {
   Price,
   Description,
   Title,
+  ProductRatings,
+  Ratings,
+  Count,
 } from "./ProductInfo.styles";
 
 function ProductInfo({ product }) {
@@ -25,10 +28,13 @@ function ProductInfo({ product }) {
       </ProductImageWrapper>
       <ProductDetails>
         <Title>{title}</Title>
+        <ProductRatings>
+          <Category>{category}</Category>
+          <Ratings>{rate}</Ratings>
+          <Count>({count} Ratings)</Count>
+        </ProductRatings>
         <Description>{description}</Description>
-        <Category>{category}</Category>
         <Price>${price}</Price>
-        <span>{`Ratings ${rate}(${count})`}</span>
       </ProductDetails>
     </ProductInfoWrapper>
   );

@@ -1,13 +1,24 @@
 import styled, { css } from "styled-components";
 
 const primaryVariant = css`
-  background-color: #007bff;
+  background-color: #00203fff;
   color: white;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    background-color: #adefd1ff;
+    color: black;
+  }
 `;
 
 const secondaryVariant = css`
   background-color: #e3165b;
   color: white;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    background-color: #3c1053ff;
+  }
 `;
 
 // Function to get styles based on variant

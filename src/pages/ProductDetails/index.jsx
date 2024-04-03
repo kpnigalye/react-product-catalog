@@ -18,7 +18,7 @@ function ProductDetails() {
     <>
       <ProductInfo product={product} />
       <Button variant="secondary" onClick={() => navigate(-1)}>
-        Back
+        Back to Catalog
       </Button>
     </>
   );
