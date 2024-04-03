@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import {
   ProductInfoWrapper,
@@ -12,10 +13,26 @@ import {
   Ratings,
   Count,
 } from "./ProductInfo.styles";
+import Button from "../../atoms/Button";
+
+function BackButton() {
+  const navigate = useNavigate();
+
+  return (
+    <Button variant="secondary" onClick={() => navigate(-1)}>
+      Back
+    </Button>
+  );
+}
 
 function ProductInfo({ product }) {
   if (Object.keys(product).length === 0) {
-    return <div>Product details are not available</div>;
+    return (
+      <>
+        <Description>Product details are not available</Description>
+        <BackButton />
+      </>
+    );
   }
 
   const { title, image, category, description, price, rating } = product;
@@ -35,6 +52,7 @@ function ProductInfo({ product }) {
         </ProductRatings>
         <Description>{description}</Description>
         <Price>${price}</Price>
+        <BackButton />
       </ProductDetails>
     </ProductInfoWrapper>
   );

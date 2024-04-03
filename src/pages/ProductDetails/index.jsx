@@ -1,5 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
-import Button from "../../components/atoms/Button";
+import { useParams } from "react-router-dom";
 import Loader from "../../components/atoms/Loader";
 import ProductInfo from "../../components/organisms/ProductInfo";
 import useFetch from "../../hooks/useFetch";
@@ -7,7 +6,6 @@ import { PRODUCTS_ENDPOINT } from "../../constants/api";
 
 function ProductDetails() {
   const { id } = useParams();
-  const navigate = useNavigate();
 
   const { data: product, loading, error } = useFetch(PRODUCTS_ENDPOINT.GET(id));
 
@@ -17,9 +15,6 @@ function ProductDetails() {
   return (
     <>
       <ProductInfo product={product} />
-      <Button variant="secondary" onClick={() => navigate(-1)}>
-        Back to Catalog
-      </Button>
     </>
   );
 }
