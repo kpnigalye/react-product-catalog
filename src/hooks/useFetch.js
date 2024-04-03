@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axiosInstance from "../utils/api";
 
 const useFetch = (url) => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 

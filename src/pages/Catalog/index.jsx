@@ -1,10 +1,11 @@
-import ProductList from "../../components/organisms/ProductList";
 import Loader from "../../components/atoms/Loader";
-import useFetch from "../../hooks/useFetch";
-import { PRODUCTS_ENDPOINT } from "../../constants";
+import Pagination from "../../components/molecules/Pagination";
+import ProductList from "../../components/organisms/ProductList";
+import { useProductContext } from "../../hooks/useProductContext";
 
 export const Catalog = () => {
-  const { data: products, loading, error } = useFetch(PRODUCTS_ENDPOINT.LIST);
+  const { products, loading, error, totalPages, currentPage, paginate } =
+    useProductContext();
 
   if (loading) return <Loader />;
   if (error) return <div>Error: {error.message}</div>;
@@ -13,6 +14,11 @@ export const Catalog = () => {
     <>
       <h1>Product Catalog</h1>
       <ProductList products={products} />
+      <Pagination
+        totalPages={totalPages}
+        currentPage={currentPage}
+        paginate={paginate}
+      />
     </>
   );
 };

@@ -3,7 +3,7 @@ import Button from "../../components/atoms/Button";
 import Loader from "../../components/atoms/Loader";
 import ProductInfo from "../../components/organisms/ProductInfo";
 import useFetch from "../../hooks/useFetch";
-import { PRODUCTS_ENDPOINT } from "../../constants";
+import { PRODUCTS_ENDPOINT } from "../../constants/api";
 
 function ProductDetails() {
   const { id } = useParams();

@@ -30,7 +30,7 @@ function ProductInfo({ product }) {
         <Title>{title}</Title>
         <ProductRatings>
           <Category>{category}</Category>
-          <Ratings>{rate}</Ratings>
+          <Ratings>{rate}/5</Ratings>
           <Count>({count} Ratings)</Count>
         </ProductRatings>
         <Description>{description}</Description>
