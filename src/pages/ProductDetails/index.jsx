@@ -1,8 +1,9 @@
 import { useNavigate, useParams } from "react-router-dom";
+import Button from "../../components/atoms/Button";
+import Loader from "../../components/atoms/Loader";
 import ProductInfo from "../../components/organisms/ProductInfo";
 import useFetch from "../../hooks/useFetch";
 import { PRODUCTS_ENDPOINT } from "../../constants";
-import Button from "../../components/atoms/Button";
 
 function ProductDetails() {
   const { id } = useParams();
@@ -10,7 +11,7 @@ function ProductDetails() {
 
   const { data: product, loading, error } = useFetch(PRODUCTS_ENDPOINT.GET(id));
 
-  if (loading) return <div>Loading Product details...</div>;
+  if (loading) return <Loader />;
   if (error) return <div>Error: {error.message}</div>;
 
   return (
