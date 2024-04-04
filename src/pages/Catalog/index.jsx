@@ -2,6 +2,7 @@ import Loader from "../../components/atoms/Loader";
 import Pagination from "../../components/molecules/Pagination";
 import ProductList from "../../components/organisms/ProductList";
 import { useProductContext } from "../../hooks/useProductContext";
+import { Title } from "./Catalog.styles";
 
 export const Catalog = () => {
   const { products, loading, error, totalPages, currentPage, paginate } =
@@ -12,7 +13,7 @@ export const Catalog = () => {
 
   return (
     <>
-      <h1>Product Catalog</h1>
+      <Title>Product Catalog</Title>
       <ProductList products={products} />
       <Pagination
         totalPages={totalPages}

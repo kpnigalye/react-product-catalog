@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import Button from "../../atoms/Button";
 import { PageNumbers } from "./Pagination.styles";
+import COLORS from "../../../constants/colors";
 
 function Pagination({ totalPages, currentPage, paginate }) {
   const pages = [];
@@ -15,8 +16,9 @@ function Pagination({ totalPages, currentPage, paginate }) {
           key={`page-${pageNumber}`}
           variant="secondary"
           style={{
-            backgroundColor: currentPage === pageNumber && "yellow",
-            color: currentPage === pageNumber && "black",
+            backgroundColor:
+              currentPage === pageNumber && COLORS.PALLATE.YELLOW,
+            color: currentPage === pageNumber && COLORS.PALLATE.BLACK,
           }}
           onClick={() => paginate(pageNumber)}
         >
@@ -28,8 +30,8 @@ function Pagination({ totalPages, currentPage, paginate }) {
 }
 
 Pagination.propTypes = {
-  totalPages: PropTypes.string.isRequired,
-  currentPage: PropTypes.string.isRequired,
+  totalPages: PropTypes.number.isRequired,
+  currentPage: PropTypes.number.isRequired,
   paginate: PropTypes.func.isRequired,
 };
 

@@ -1,23 +1,24 @@
 import styled, { css } from "styled-components";
+import COLORS from "../../../constants/colors";
 
 const primaryVariant = css`
-  background-color: #00203fff;
-  color: white;
+  background-color: ${COLORS.BUTTON.PRIMARY.MAIN};
+  color: ${COLORS.PALLATE.WHITE};
   letter-spacing: 0.5px;
 
   &:hover {
-    background-color: #adefd1ff;
-    color: black;
+    background-color: ${COLORS.BUTTON.PRIMARY.HOVER};
+    color: ${COLORS.PALLATE.BLACK};
   }
 `;
 
 const secondaryVariant = css`
-  background-color: #e3165b;
-  color: white;
+  background-color: ${COLORS.BUTTON.SECONDARY.MAIN};
+  color: ${COLORS.PALLATE.WHITE};
   letter-spacing: 0.5px;
 
   &:hover {
-    background-color: #3c1053ff;
+    background-color: ${COLORS.BUTTON.SECONDARY.HOVER};
   }
 `;
 

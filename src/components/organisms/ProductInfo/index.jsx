@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import BackButton from "../../molecules/BackButton";
 import {
   ProductInfoWrapper,
   ProductImageWrapper,
@@ -13,17 +13,6 @@ import {
   Ratings,
   Count,
 } from "./ProductInfo.styles";
-import Button from "../../atoms/Button";
-
-function BackButton() {
-  const navigate = useNavigate();
-
-  return (
-    <Button variant="secondary" onClick={() => navigate(-1)}>
-      Back
-    </Button>
-  );
-}
 
 function ProductInfo({ product }) {
   if (Object.keys(product).length === 0) {

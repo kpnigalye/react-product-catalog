@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import COLORS from "../../../constants/colors";
 
 const ProductInfoWrapper = styled.div`
   display: grid;
@@ -30,9 +31,9 @@ const ProductDetails = styled.div`
 `;
 
 const Category = styled.span`
-  background-color: #00203fff;
+  background-color: ${COLORS.BUTTON.PRIMARY.MAIN};
   padding: 10px 30px;
-  color: white;
+  color: ${COLORS.PALLATE.WHITE};
   text-transform: uppercase;
   border-radius: 20px;
   letter-spacing: 0.5px;
@@ -41,7 +42,7 @@ const Category = styled.span`
 
 const Price = styled.span`
   font-size: 48px;
-  color: #ff0000;
+  color: ${COLORS.TEXT.SECONDARY};
   font-weight: 600;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -54,10 +55,9 @@ const Description = styled.span`
 
 const Title = styled.span`
   font-size: 32px;
-  color: #241a75;
+  color: ${COLORS.TEXT.PRIMARY};
   margin-top: 20px;
   font-weight: 500;
-  font-family: sans-serif;
 `;
 
 const ProductRatings = styled.div`
@@ -71,13 +71,13 @@ const ProductRatings = styled.div`
 const Ratings = styled.span`
   padding: 3px 15px;
   border-radius: 10px;
-  background-color: #fcf951ff;
-  color: #422057ff;
+  background-color: ${COLORS.PALLATE.YELLOW};
+  color: ${COLORS.PALLATE.PURPLE};
   font-weight: 600;
 `;
 
 const Count = styled.span`
-  color: #422057ff;
+  color: ${COLORS.PALLATE.PURPLE};
   font-weight: 600;
 `;
 

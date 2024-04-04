@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Button from "../../atoms/Button";
+import COLORS from "../../../constants/colors";
 
 const ProductCardWrapper = styled.div`
   text-align: center;
@@ -34,14 +35,13 @@ const ProductImage = styled.div`
 const ProductTitle = styled.div`
   font-size: 16px;
   font-weight: 500;
-  color: #283593;
-  font-family: sans-serif;
+  color: ${COLORS.PALLATE.NAVY};
   height: 30%;
 `;
 
 const Price = styled.span`
   font-size: 48px;
-  color: #ff0000;
+  color: ${COLORS.TEXT.SECONDARY};
   font-weight: 600;
   margin-bottom: 30px;
   height: 20%;
