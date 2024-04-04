@@ -2,8 +2,9 @@ import styled from "styled-components";
 import COLORS from "../../../constants/colors";
 
 const ProductInfoWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 30% 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   column-gap: 40px;
 `;

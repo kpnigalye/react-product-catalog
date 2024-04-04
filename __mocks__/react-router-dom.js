@@ -6,7 +6,6 @@ const MockLink = ({ to, children }) => {
 };
 
 // mock: useNavigate
-
 const mockNavigate = jest.fn();
 
 const useNavigate = () => {

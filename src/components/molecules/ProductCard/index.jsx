@@ -14,11 +14,13 @@ function ProductCard({ product }) {
   return (
     <>
       <ProductCardWrapper>
-        <ProductImage imagesource={image} />
-        <ProductTitle>{title}</ProductTitle>
-        <Price>${price}</Price>
+        <ProductImage data-testid={`product-image-${id}`} imagesource={image} />
+        <ProductTitle data-testid={`product-title-${id}`}>{title}</ProductTitle>
+        <Price data-testid={`product-price-${id}`}>${price}</Price>
         <Link key={`product-card-${id}`} to={`/products/${id}`}>
-          <ViewDetailsButton>View Details</ViewDetailsButton>
+          <ViewDetailsButton data-testid={`product-view-details-${id}`}>
+            View Details
+          </ViewDetailsButton>
         </Link>
       </ProductCardWrapper>
     </>

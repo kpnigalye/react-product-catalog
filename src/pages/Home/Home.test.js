@@ -1,11 +1,6 @@
 import { render } from "@testing-library/react";
 import Home from ".";
 
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
-  Link: require("../../../_mocks__/react-router-dom").MockLink,
-}));
-
 test("renders Home component", () => {
   const component = render(<Home />);
 

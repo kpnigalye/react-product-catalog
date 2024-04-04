@@ -17,6 +17,7 @@ Product Catalog
 - download or clone the repository
 - run `npm install` to install dependencies
 - run `npm run dev` to run the project
+- run `npm test` to run tests
 
 ## Approach
 
