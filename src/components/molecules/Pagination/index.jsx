@@ -20,7 +20,7 @@ function Pagination({ totalPages, currentPage, paginate }) {
           }}
           onClick={() => paginate(pageNumber)}
         >
-          {pageNumber}
+          {pageNumber.toString()}
         </Button>
       ))}
     </PageNumbers>
