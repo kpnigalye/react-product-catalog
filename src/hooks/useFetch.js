@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import axiosInstance from "../utils/api";
 
 const useFetch = (url) => {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     const fetchData = async () => {
       try {

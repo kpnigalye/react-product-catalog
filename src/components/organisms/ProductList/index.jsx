@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import ProductCard from "../../molecules/ProductCard";
+import ProductCard from "../ProductCard";
 import { ProductListWrapper } from "./ProductList.styles";
 
 function ProductList({ products }) {
