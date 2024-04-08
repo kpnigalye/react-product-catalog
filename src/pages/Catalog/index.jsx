@@ -1,3 +1,4 @@
+import Button from "../../components/atoms/Button";
 import Loader from "../../components/atoms/Loader";
 import BackButton from "../../components/molecules/BackButton";
 import Pagination from "../../components/molecules/Pagination";
@@ -6,8 +7,15 @@ import { useProductContext } from "../../hooks/useProductContext";
 import { Title } from "./Catalog.styles";
 
 export const Catalog = () => {
-  const { products, loading, error, totalPages, currentPage, paginate } =
-    useProductContext();
+  const {
+    products,
+    loading,
+    error,
+    totalPages,
+    currentPage,
+    paginate,
+    setFilterClicked,
+  } = useProductContext();
 
   if (loading) return <Loader />;
   if (error) {
@@ -22,6 +30,9 @@ export const Catalog = () => {
   return (
     <>
       <Title>Product Catalog</Title>
+
+      <Button onClick={() => setFilterClicked(true)}>Filter</Button>
+
       <ProductList products={products} />
       <Pagination
         totalPages={totalPages}
