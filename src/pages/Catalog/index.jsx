@@ -15,6 +15,7 @@ export const Catalog = () => {
     currentPage,
     paginate,
     setFilterClicked,
+    setSortClicked,
   } = useProductContext();
 
   if (loading) return <Loader />;
@@ -32,6 +33,8 @@ export const Catalog = () => {
       <Title>Product Catalog</Title>
 
       <Button onClick={() => setFilterClicked(true)}>Filter</Button>
+
+      <Button onClick={() => setSortClicked(true)}>Sort</Button>
 
       <ProductList products={products} />
       <Pagination
