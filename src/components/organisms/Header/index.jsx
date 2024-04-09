@@ -5,7 +5,7 @@ function Header() {
   return (
     <Wrapper to="/">
       <Logo src={logoIcon} alt="Logo" />
-      <Title>Layr</Title>
+      <Title>XYZ Company</Title>
     </Wrapper>
   );
 }
